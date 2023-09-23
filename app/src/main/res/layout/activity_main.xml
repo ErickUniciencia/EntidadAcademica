@@ -6,13 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="#151F42"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestión Académica"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="125dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iniciales Nombre Estudiante"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="185dp"
+            android:layout_height="186dp"
+            app:srcCompat="@drawable/imagen"
+            tools:layout_editor_absoluteX="224dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <RadioGroup
+            android:layout_width="392dp"
+            android:layout_height="181dp"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="226dp">
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:text="Registro Asignatura"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:text="Matricula Asignatura"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:text="Registro Docentes"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:text="Registro Estudiante"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
