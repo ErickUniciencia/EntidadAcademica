@@ -7,78 +7,119 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         android:background="#151F42"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gestión Académica"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="125dp" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Iniciales Nombre Estudiante"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="157dp" />
+            <LinearLayout
+                android:layout_width="403dp"
+                android:layout_height="187dp"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="185dp"
-            android:layout_height="186dp"
-            app:srcCompat="@drawable/imagen"
-            tools:layout_editor_absoluteX="224dp"
-            tools:layout_editor_absoluteY="1dp" />
+                <LinearLayout
+                    android:layout_width="218dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="120dp">
 
-        <RadioGroup
-            android:layout_width="392dp"
-            android:layout_height="181dp"
-            tools:layout_editor_absoluteX="12dp"
-            tools:layout_editor_absoluteY="226dp">
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gestión Académica"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
 
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="386dp"
-                android:layout_height="45dp"
-                android:text="Registro Asignatura"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EDMG"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="386dp"
-                android:layout_height="45dp"
-                android:text="Matricula Asignatura"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                </LinearLayout>
 
-            <RadioButton
-                android:id="@+id/radioButton5"
-                android:layout_width="386dp"
-                android:layout_height="45dp"
-                android:text="Registro Docentes"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="386dp"
-                android:layout_height="45dp"
-                android:text="Registro Estudiante"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-        </RadioGroup>
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/imagen" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="changeRegistro"
+                        android:text="Registro Estudiante"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="changeRegistro"
+                        android:text="Registro Asignatura"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Matricula Asignatura"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Registro Docentes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
