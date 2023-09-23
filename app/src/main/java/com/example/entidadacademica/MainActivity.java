@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void changeRegistro(View view){
+    public void goRegistro(View view){
         Intent i = new Intent (this, RegistroEstudiante.class);
         startActivity(i);
     }
