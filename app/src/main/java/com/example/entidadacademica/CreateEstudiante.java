@@ -4,16 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class RegistroEstudiante extends AppCompatActivity {
+public class CreateEstudiante extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registro_estudiante);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar4);
+        setContentView(R.layout.create_estudiante);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar5);
         setSupportActionBar(toolbar);
 
         // add back arrow to toolbar
@@ -34,8 +35,13 @@ public class RegistroEstudiante extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goCreate(View view){
-        Intent i = new Intent (this, CreateEstudiante.class);
-        startActivity(i);
+
+
+    public void goSave(View view){
+        CharSequence text = "Registro guardado con exito!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(this, text, duration);
+        toast.show();
+        finish();
     }
 }
