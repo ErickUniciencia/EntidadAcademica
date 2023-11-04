@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:text="Registro de Estudiantes"
+            android:text="Registro de Asignaturas"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -82,7 +82,7 @@
 
 
             <ListView
-                android:id="@+id/estudiantesListView"
+                android:id="@+id/asignaturasListView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp" />

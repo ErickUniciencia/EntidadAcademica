@@ -14,8 +14,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void goRegistro(View view){
+    public void goRegistroEstudiante(View view){
         Intent i = new Intent (this, RegistroEstudiante.class);
+        startActivity(i);
+    }
+
+    public void goRegistroAsignatura(View view){
+        Intent i = new Intent (this, RegistroAsignatura.class);
+        startActivity(i);
+    }
+
+    public void goRegistroDocente(View view){
+        Intent i = new Intent (this, RegistroDocente.class);
         startActivity(i);
     }
 }

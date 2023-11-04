@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Gestión Academica</string>
+    <string-array name="sexo_options">
+        <item></item>
+        <item>Femenino</item>
+        <item>Masculino</item>
+        <item>Otro</item>
+    </string-array>
 </resources>

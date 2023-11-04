@@ -13,17 +13,15 @@ import android.widget.SearchView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import java.util.ArrayList;
+public class RegistroAsignatura extends AppCompatActivity {
 
-public class RegistroEstudiante extends AppCompatActivity {
-
-    private ListView estudiantesListView;
-    private ArrayAdapter<String> estudiantesAdapter;
+    private ListView listViewAsignaturas;
+    private ArrayAdapter<String> asignaturasAdapter;
     private SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registro_estudiante);
+        setContentView(R.layout.registro_asignatura);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar4);
         setSupportActionBar(toolbar);
 
@@ -33,9 +31,9 @@ public class RegistroEstudiante extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        estudiantesListView = findViewById(R.id.estudiantesListView);
-        estudiantesAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
-        estudiantesListView.setAdapter(estudiantesAdapter);
+        listViewAsignaturas = findViewById(R.id.asignaturasListView);
+        asignaturasAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        listViewAsignaturas.setAdapter(asignaturasAdapter);
 
         searchView = findViewById(R.id.searchView);
         // Agregar un TextWatcher al SearchView para la búsqueda en tiempo real
@@ -49,13 +47,13 @@ public class RegistroEstudiante extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 // Realizar la búsqueda en la lista y actualizarla
-                estudiantesAdapter.getFilter().filter(newText);
+                asignaturasAdapter.getFilter().filter(newText);
                 return true;
             }
         });
 
         // Llama a la función para cargar y mostrar los registros de estudiantes
-        cargarListaEstudiantes();
+        cargarListaAsignaturas();
 
     }
 
@@ -70,29 +68,30 @@ public class RegistroEstudiante extends AppCompatActivity {
     }
 
     public void goCreate(View view){
-        Intent i = new Intent (this, CreateEstudiante.class);
+        Intent i = new Intent (this, CreateAsignatura.class);
         startActivity(i);
     }
 
-    private void cargarListaEstudiantes() {
+    private void cargarListaAsignaturas() {
         // Abre la base de datos en modo lectura
         AdminSqliteOpenHelper dbHelper = new AdminSqliteOpenHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         // Define las columnas que deseas mostrar en la lista
-        String[] columns = {AdminSqliteOpenHelper.COLUMN_NOMBRE, AdminSqliteOpenHelper.COLUMN_DOCUMENTO};
+        String[] columns = {AdminSqliteOpenHelper.COLUMN_NOMBRE_ASIGNATURA, AdminSqliteOpenHelper.COLUMN_CODIGO_ASIGNATURA, AdminSqliteOpenHelper.COLUMN_CREDITOS};
 
-        // Realiza una consulta a la tabla de estudiantes y obtén un cursor
-        Cursor cursor = db.query(AdminSqliteOpenHelper.TABLE_ESTUDIANTES, columns, null, null, null, null, null);
+        // Realiza una consulta a la tabla de asignaturas y obtén un cursor
+        Cursor cursor = db.query(AdminSqliteOpenHelper.TABLE_ASIGNATURAS, columns, null, null, null, null, null);
 
         // Limpia el adaptador antes de agregar nuevos datos
-        estudiantesAdapter.clear();
+        asignaturasAdapter.clear();
 
         // Recorre el cursor y agrega los datos a la lista
         while (cursor.moveToNext()) {
-            String nombre = cursor.getString(cursor.getColumnIndex(AdminSqliteOpenHelper.COLUMN_NOMBRE));
-            String documento = cursor.getString(cursor.getColumnIndex(AdminSqliteOpenHelper.COLUMN_DOCUMENTO));
-            estudiantesAdapter.add(nombre + " - " + documento);
+            String nombre = cursor.getString(cursor.getColumnIndex(AdminSqliteOpenHelper.COLUMN_NOMBRE_ASIGNATURA));
+            String codigo = cursor.getString(cursor.getColumnIndex(AdminSqliteOpenHelper.COLUMN_CODIGO_ASIGNATURA));
+            String creditos = cursor.getString(cursor.getColumnIndex(AdminSqliteOpenHelper.COLUMN_CREDITOS));
+            asignaturasAdapter.add("Codigo: "+codigo + "\nNombre: " + nombre + "\nCreditos: " + creditos);
         }
 
         // Cierra el cursor y la base de datos
@@ -100,3 +99,4 @@ public class RegistroEstudiante extends AppCompatActivity {
         db.close();
     }
 }
+

@@ -86,7 +86,7 @@
                         android:id="@+id/radioButton2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="goRegistro"
+                        android:onClick="goRegistroEstudiante"
                         android:text="Registro Estudiante"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
@@ -95,6 +95,7 @@
                         android:id="@+id/radioButton3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="goRegistroAsignatura"
                         android:text="Registro Asignatura"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
@@ -111,6 +112,7 @@
                         android:id="@+id/radioButton5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="goRegistroDocente"
                         android:text="Registro Docentes"
                         android:textColor="@color/white"
                         android:textSize="16sp" />

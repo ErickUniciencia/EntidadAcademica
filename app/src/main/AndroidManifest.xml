@@ -27,6 +27,18 @@
         <activity
             android:name=".CreateEstudiante">
         </activity>
+        <activity
+            android:name=".RegistroAsignatura">
+        </activity>
+        <activity
+            android:name=".CreateAsignatura">
+        </activity>
+        <activity
+            android:name=".RegistroDocente">
+        </activity>
+        <activity
+            android:name=".CreateDocente">
+        </activity>
     </application>
 
 </manifest>
