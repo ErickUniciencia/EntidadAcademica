@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Aquí puedes definir las vistas individuales dentro de un elemento de matrícula -->
+    <TextView
+        android:id="@+id/textViewNombreEstudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre del estudiante" />
+
+    <TextView
+        android:id="@+id/textViewNombreAsignatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la asignatura" />
+
+    <TextView
+        android:id="@+id/textViewNombreDocente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre del docente" />
+
+    <!-- Puedes agregar más vistas según sea necesario -->
+</LinearLayout>

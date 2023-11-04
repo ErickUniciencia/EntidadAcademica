@@ -6,4 +6,7 @@
         <item>Masculino</item>
         <item>Otro</item>
     </string-array>
+    <string name="prompt_estudiante">Selecciona un estudiante</string>
+    <string name="prompt_asignatura">Selecciona una asignatura</string>
+    <string name="prompt_docente">Selecciona un docente</string>
 </resources>

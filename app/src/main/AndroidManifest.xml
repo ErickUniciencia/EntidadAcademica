@@ -39,6 +39,12 @@
         <activity
             android:name=".CreateDocente">
         </activity>
+        <activity
+            android:name=".MatriculaAsignatura">
+        </activity>
+        <activity
+            android:name=".CreateMatriculaAsignatura">
+        </activity>
     </application>
 
 </manifest>

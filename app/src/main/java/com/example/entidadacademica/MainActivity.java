@@ -28,4 +28,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent (this, RegistroDocente.class);
         startActivity(i);
     }
+
+    public void goMatricula(View view){
+        Intent i = new Intent (this, MatriculaAsignatura.class);
+        startActivity(i);
+    }
 }
